@@ -42,7 +42,7 @@ export function OptForm() {
       <div className="relative group gap-4 flex flex-col">
         <label
           htmlFor="email"
-          className={`absolute -top-2.5 left-4 px-1 bg-white text-sm transition-all duration-300 ${
+          className={`absolute -top-2.5 left-4 px-1 mobile:bg-[#f7f3f3] lmobile:bg-white text-sm transition-all duration-300 ${
             showError
               ? "text-red-500"
               : "text-gray-400 group-focus-within:text-blue-500"
@@ -56,7 +56,7 @@ export function OptForm() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           onBlur={() => setTouched(true)}
-          className={`w-full border rounded-xl px-4 pt-4 pb-2 text-black outline-none transition-all duration-300 ${
+          className={`w-full border bg-none rounded-xl px-4 pt-4 pb-2 text-black outline-none transition-all duration-300 ${
             showError
               ? "border-red-500 focus:border-red-500"
               : "border-gray-300 focus:border-blue-500"
