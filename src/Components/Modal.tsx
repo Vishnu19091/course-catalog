@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { RedButton, BlueButton } from "./Buttons/Buttons";
 
 interface ModalProps {
   isOpen: boolean;
@@ -13,9 +14,9 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
 
   return (
     <div className="fixed inset-0 z-999 flex items-center justify-center bg-black/50 backdrop-blur-[2px]">
-      <div className="bg-white p-6 rounded-lg shadow-xl w-full max-w-md">
+      <div className="bg-white p-6 rounded-lg shadow-xl desktop:w-[40%]">
         <div className="flex justify-between items-center mb-4">
-          <h2 className="text-xl font-semibold">Modal Title</h2>
+          <h2 className="text-xl font-semibold">Course Filters</h2>
           <button
             onClick={onClose}
             className="text-gray-500 hover:text-gray-700 focus:outline-none hover:cursor-pointer"
@@ -37,15 +38,10 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
         </div>
         <div className="mb-4">{children}</div>
         <div className="flex justify-end">
-          <button
-            onClick={onClose}
-            className="bg-gray-200 hover:bg-gray-300 px-4 py-2 rounded mr-2 hover:cursor-pointer"
-          >
-            Close
-          </button>
-          <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded hover:cursor-pointer">
-            Confirm
-          </button>
+          <div className="grid grid-cols-2 gap-x-5 justify-around w-full">
+            <RedButton name="Clear" />
+            <BlueButton name="Apply Filters" />
+          </div>
         </div>
       </div>
     </div>

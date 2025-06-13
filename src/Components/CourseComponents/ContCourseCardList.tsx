@@ -1,4 +1,4 @@
-import CourseCard from "./CourseCard";
+import CourseCard from "./ContCourseCard";
 
 interface Course {
   name: string;
@@ -32,10 +32,10 @@ export default function ContinueCourseCardList() {
 
   return (
     <div className="mx-auto max-w-full p-4">
-      <h2 className="text-xl font-semibold mb-4">
+      <h2 className="mobile:text-[15px] lmobile:text-[17px] tablet:text-xl font-semibold mb-4">
         Continue Learning ({courses.length})
       </h2>
-      <div className="grid grid-cols-4 gap-4">
+      <div className="grid desktop:grid-cols-4 ldesktop:grid-cols-4 laptop:grid-cols-4 mobile:grid-cols-3 lmobile:grid-cols-2 tablet:grid-cols-2 gap-4">
         {courses.map(
           (course, idx) =>
             course.name &&

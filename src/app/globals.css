@@ -1,19 +1,34 @@
 @import "tailwindcss";
 
+@theme {
+  --breakpoint-*: initial;
+  --breakpoint-mobile: 360px;
+  --breakpoint-lmobile: 640px;
+  --breakpoint-tablet: 1024px;
+  --breakpoint-desktop: 1280px;
+  --breakpoint-ldesktop: 1366px;
+  --breakpoint-laptop: 1920px;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
 }
 
 body {
-  background: rgb(247, 243, 243);
+  background: #f7f3f3;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
-  height: 200vh;
+  height: 100vh;
   scroll-behavior: smooth;
 }
 
-@theme {
-  --breakpoint-*: initial;
-  --breakpoint-mobile: 30px;
-}
+/* 
+Layout
+mobile:max-w-fit mobile:m-4
+lmobile:max-w-fit largescreen:m-4
+tablet:max-w-fit tablet:m-4 
+desktop:max-w-[65%] desktop:mx-auto
+ldesktop:max-w-[65%] desktop:mx-auto
+laptop:max-w-[65%] laptop:mx-auto
+*/

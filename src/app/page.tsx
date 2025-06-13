@@ -1,9 +1,6 @@
-import { Your_course_block } from "Components/CourseComponent";
+import { Your_course_block } from "Components/CourseComponents/CourseComponent";
+import "./globals.css";
 
 export default function Home() {
-  return (
-    <div className=" max-w-[65%] mx-auto">
-      <Your_course_block />
-    </div>
-  );
+  return <Your_course_block />;
 }

@@ -30,14 +30,24 @@ export function Filter() {
   );
 }
 
-interface ButtonProp {
+export interface ButtonProp {
   name: string;
+}
+
+export function PlainButton({ name }: ButtonProp) {
+  return (
+    <>
+      <button className="bg-[#cbd5dd] border-b-[5px] border-b-[#bec7cd] rounded-2xl text-black font-[600] px-12 py-2.5 hover:scale-105 transition-all duration-300 cursor-pointer">
+        {name}
+      </button>
+    </>
+  );
 }
 
 export function BlueButton({ name }: ButtonProp) {
   return (
     <>
-      <button className="bg-blue-600 border-b-[5px] border-b-blue-800 rounded-2xl text-white font-[600] px-12 py-2.5 hover:scale-110 transition-all duration-300 cursor-pointer">
+      <button className="bg-blue-600 border-b-[5px] border-b-blue-800 rounded-2xl text-white font-[600] px-12 py-2.5 hover:scale-105 transition-all duration-300 cursor-pointer">
         {name}
       </button>
     </>
@@ -47,7 +57,7 @@ export function BlueButton({ name }: ButtonProp) {
 export function RedButton({ name }: ButtonProp) {
   return (
     <>
-      <button className="bg-red-600 border-b-[5px] border-b-red-800 rounded-2xl text-white font-[600] px-12 py-2.5 hover:scale-110 transition-all duration-300 cursor-pointer">
+      <button className="bg-red-600 border-b-[5px] border-b-red-800 rounded-2xl text-white font-[600] px-12 py-2.5 hover:scale-105 transition-all duration-300 cursor-pointer">
         {name}
       </button>
     </>

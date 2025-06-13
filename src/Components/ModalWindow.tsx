@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Modal from "./Modal";
+import { FilterCourseComp } from "./CourseFilters/FilterCourseComp";
 
 const ModalFilterButton = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -9,11 +10,21 @@ const ModalFilterButton = () => {
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
 
+  const FilterBoards = [
+    { name: "CBSE" },
+    { name: "ICSE" },
+    { name: "State Board" },
+  ];
+
+  const FilterClasses = Array.from({ length: 12 }, (_, i) => ({
+    name: `Class ${i + 1}`,
+  }));
+
   return (
     <div>
       <button
         onClick={openModal}
-        className="flex flex-row border-[2px] border-[#0088ff] gap-2 rounded-xl px-3 py-1.5 hover:cursor-pointer"
+        className="flex flex-row border-[2px] border-[#0088ff] gap-2 rounded-xl px-3 py-1.5 hover:cursor-pointer mobile:scale-[0.75] lmobile:scale-[0.8] tablet:scale-[1]"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -22,9 +33,9 @@ const ModalFilterButton = () => {
           viewBox="0 0 24 24"
           fill="none"
           stroke="#0088ff"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         >
           <path stroke="none" d="M0 0h24v24H0z" fill="none" />
           <path d="M4 10a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
@@ -40,7 +51,8 @@ const ModalFilterButton = () => {
         <p className="text-lg font-[600] text-[#0088ff]">Filters</p>
       </button>
       <Modal isOpen={isModalOpen} onClose={closeModal}>
-        <p>This is the modal content.</p>
+        <FilterCourseComp title="Select Board" items={FilterBoards} />
+        <FilterCourseComp title="Select Class" items={FilterClasses} />
       </Modal>
     </div>
   );
