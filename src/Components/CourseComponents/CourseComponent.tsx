@@ -1,7 +1,7 @@
 import { NavigationBar } from "Components/Navigation/NavigationBar";
 import ContinueCourseCardList from "./ContCourseCardList";
 import CourseSection from "./YourCourseList";
-import ModalFilterButton from "Components/ModalWindow";
+import { ModalFilterButton } from "Components/ModalWindow";
 
 export function Your_course_block() {
   {

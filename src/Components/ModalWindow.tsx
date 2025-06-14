@@ -1,14 +1,11 @@
 "use client";
 
 import React, { useState } from "react";
-import Modal from "./Modal";
+import { MobileDragModal } from "./Modal";
 import { FilterCourseComp } from "./CourseFilters/FilterCourseComp";
 
-const ModalFilterButton = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const openModal = () => setIsModalOpen(true);
-  const closeModal = () => setIsModalOpen(false);
+export const ModalFilterButton = () => {
+  const [showModal, setShowModal] = useState(false);
 
   const FilterBoards = [
     { name: "CBSE" },
@@ -22,8 +19,9 @@ const ModalFilterButton = () => {
 
   return (
     <div>
+      {/* Filter Button */}
       <button
-        onClick={openModal}
+        onClick={() => setShowModal(true)}
         className="flex flex-row border-[2px] border-[#0088ff] gap-2 rounded-xl px-3 py-1.5 hover:cursor-pointer mobile:scale-[0.75] lmobile:scale-[0.8] tablet:scale-[1]"
       >
         <svg
@@ -50,12 +48,14 @@ const ModalFilterButton = () => {
         </svg>
         <p className="text-lg font-[600] text-[#0088ff]">Filters</p>
       </button>
-      <Modal isOpen={isModalOpen} onClose={closeModal}>
-        <FilterCourseComp title="Select Board" items={FilterBoards} />
-        <FilterCourseComp title="Select Class" items={FilterClasses} />
-      </Modal>
+
+      {/* Mobile Modal */}
+      {showModal && (
+        <MobileDragModal onClose={() => setShowModal(false)}>
+          <FilterCourseComp title="Board" items={FilterBoards} />
+          <FilterCourseComp title="Class" items={FilterClasses} />
+        </MobileDragModal>
+      )}
     </div>
   );
 };
-
-export default ModalFilterButton;

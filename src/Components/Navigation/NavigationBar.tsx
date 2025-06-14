@@ -79,7 +79,7 @@ export function NavigationBar() {
           const isActive = pathname === item.href;
           return (
             <Link key={item.name} href={item.href}>
-              <div className="flex flex-col items-center cursor-pointer">
+              <div className="flex flex-col items-center cursor-pointer mobile:scale-75 lmobile:scale-[0.8] tablet:scale-100">
                 <div
                   className={`${
                     isActive ? "text-blue-500" : "text-gray-600"
