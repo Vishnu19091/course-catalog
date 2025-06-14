@@ -54,6 +54,7 @@ export function OptForm() {
           id="email"
           type="email"
           value={email}
+          autoComplete="off"
           onChange={(e) => setEmail(e.target.value)}
           onBlur={() => setTouched(true)}
           className={`w-full border bg-none rounded-xl px-4 pt-4 pb-2 text-black outline-none transition-all duration-300 ${
