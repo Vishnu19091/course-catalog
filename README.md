@@ -1,3 +1,3 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+This is a simple course catalog test project.
 
-### Will Deployed on Vercel
+['Live'](https://course-catalog-tau.vercel.app/) on Vercel.
